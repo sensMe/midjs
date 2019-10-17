@@ -62,7 +62,7 @@ class opt {
 				data: data,
 				success: res => {
 					if (res.statusCode != 200) {
-						console.log("--------------->失败",res)
+						console.log("---->失败",res)
 						if (res.data) {
 							if(res.data.message==='token'){
 								uni.showToast({
@@ -74,7 +74,7 @@ class opt {
 										key: 'token',									
 									})
 									uni.reLaunch({
-										url:'../sign/sign'
+										url:'跳转地址'/*跳转地址，比如../sign/sign*/
 									})
 								},300)
 							}else{
@@ -111,12 +111,12 @@ class opt {
 					duration: 5500		
 				});
 				uni.reLaunch({
-					url: '/pages/tabBar/commonTabBar.vue'
+					url: '跳转地址'/*比如/pages/tabBar/TabBar.vue*/
 				})
 			}else{
 				uni.showToast({
 					title: t,				
-				},88500);
+				},1500);
 			}
 			
 		});
@@ -150,8 +150,7 @@ class opt {
 
 
 
-/* http://192.168.0.115:8761 */
-/* https://sys.xwkeji.net */
+/* 接口域名地址 */
 
-export default new opt('https://sys.xwkeji.net');
+export default new opt('http://127.0.0.1:8080');
 
